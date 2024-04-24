@@ -131,6 +131,17 @@ class Slider {
     if (this.slideIndex < 1) {
       this.slideIndex = this.slides.length;
     }
+    try {
+      if (this.slideIndex === 3) {
+        setTimeout(() => {
+          this.hanson.style.display = 'block';
+          this.hanson.classList.add('slideInUp');
+        }, 3000);
+      } else {
+        this.hanson.classList.remove('slideInUp');
+        this.hanson.style.display = 'none';
+      }
+    } catch (e) {}
     this.slides.forEach(slide => {
       slide.style.display = 'none';
     });
@@ -152,6 +163,11 @@ class Slider {
         this.showSlides(1);
       });
     });
+    try {
+      this.hanson = this.page.querySelector('.hanson');
+      this.hanson.classList.add('animated');
+      this.hanson.style.display = 'none';
+    } catch (e) {}
   }
 }
 

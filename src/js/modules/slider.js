@@ -17,6 +17,18 @@ export default class Slider {
             this.slideIndex = this.slides.length;
         }
 
+        try {
+            if (this.slideIndex === 3) {
+                setTimeout(() => {
+                    this.hanson.style.display = 'block';
+                    this.hanson.classList.add('slideInUp');
+                }, 3000);
+            } else {
+                this.hanson.classList.remove('slideInUp');
+                this.hanson.style.display = 'none';
+            }
+        } catch(e) {}
+
         this.slides.forEach(slide => {
             slide.style.display = 'none';
         });
@@ -44,5 +56,10 @@ export default class Slider {
             });
         });
 
+        try {
+            this.hanson = this.page.querySelector('.hanson');
+            this.hanson.classList.add('animated');
+            this.hanson.style.display = 'none';
+        } catch(e) {}
     }
 }
