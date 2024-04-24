@@ -22,11 +22,7 @@ module.exports = {
 					'error',
 					'always'
 				],
-				'no-unused-vars': 'warn',
-				'max-len': [
-					'error',
-					{ 'code': 80 }
-				]
+				'no-unused-vars': 'warn'
 			}
 		}
 	]
